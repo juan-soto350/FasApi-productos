@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException
-from app.schemas import Product, ProductResponse, ProductUpdate
+from App.schemas import ProductCreate, ProductResponse, ProductUpdate
 
 app = FastAPI()
 
@@ -31,7 +31,7 @@ def get_product(product_id: int):
 
 
 @app.post("/products", response_model=ProductResponse)
-def create_product(product: Product):
+def create_product(product: ProductCreate):
 
     global next_id
 
